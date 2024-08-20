@@ -1,12 +1,8 @@
-const forwardSlash = "/".charCodeAt(0);
-
 const getLastSlashBeforeIndex = (path, index) => {
   let pathIndex = index - 1;
 
   while (pathIndex >= 0) {
-    let codeUnit = path.charCodeAt(pathIndex);
-
-    if (codeUnit === forwardSlash) {
+    if (path[pathIndex] === "/") {
       return pathIndex;
     }
 
