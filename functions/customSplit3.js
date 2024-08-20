@@ -1,5 +1,4 @@
-const forwardSlash = 47;
-const backSlash = 92;
+const forwardSlash = "/".charCodeAt(0);
 
 const getLastSlashBeforeIndex = (path, index) => {
   let i = index;
@@ -7,7 +6,7 @@ const getLastSlashBeforeIndex = (path, index) => {
   while (i >= 0) {
     let codeUnit = path.charCodeAt(i);
 
-    if (codeUnit === forwardSlash || codeUnit === backSlash) {
+    if (codeUnit === forwardSlash) {
       return i;
     }
 

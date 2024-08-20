@@ -10,24 +10,6 @@ const getLastSlashBeforeIndex = (path, startingIndex) => {
       return pathIndex;
     }
 
-    // UTF-16 surrogate pair handling
-    // Check if codeUnit is a low surrogate
-    if (codeUnit >= 0xdc00 && codeUnit <= 0xdfff) {
-      // Ensure there's a previous character
-      if (pathIndex > 0) {
-        let maybeHighSurrogate = path.charCodeAt(pathIndex - 1);
-
-        // Check if the previous code unit is a high surrogate
-        if (maybeHighSurrogate >= 0xd800 && maybeHighSurrogate <= 0xdbff) {
-          // Move past the high surrogate and continue
-          pathIndex -= 2;
-          continue;
-        }
-      }
-    }
-
-    // At this point, we know we either have a regular character or a lone surrogate, which is
-    // valid in windows file paths
     pathIndex--;
   }
 
@@ -37,9 +19,9 @@ const getLastSlashBeforeIndex = (path, startingIndex) => {
 /**
  * Assumptions:
  * - The path is always normalized to use posix file separators (see `addFileScope`)
- * - The path is always relative to the project root (see `addFileScope`)
+ * - The path is always relative to the project root, i.e. there's no leading slash (see `addFileScope`)
  * - There's no need to validate the file extension as we know that we only run this function if the
- *   path was inside a VE file
+ *   path is already a VE file
  * */
 export const customSplit4 = (path) => {
   let file;
