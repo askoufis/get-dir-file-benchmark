@@ -1,6 +1,7 @@
 # get-dir-file-benchmark
 
 A comparison of different implementations to get the directory name and file name (without the `.css.*` extension) from a full file path.
+See https://github.com/vanilla-extract-css/vanilla-extract/pull/1466 for more context.
 
 ## Instructions
 
