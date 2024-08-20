@@ -1,7 +1,7 @@
 const forwardSlash = "/".charCodeAt(0);
 
-const getLastSlashBeforeIndex = (path, startingIndex) => {
-  let pathIndex = startingIndex;
+const getLastSlashBeforeIndex = (path, index) => {
+  let pathIndex = index - 1;
 
   while (pathIndex >= 0) {
     let codeUnit = path.charCodeAt(pathIndex);
@@ -33,9 +33,7 @@ export const customSplit4 = (path) => {
     return;
   }
 
-  let i = lastIndexOfDotCss - 1;
-
-  const lastSlashIndex = getLastSlashBeforeIndex(path, i);
+  const lastSlashIndex = getLastSlashBeforeIndex(path, lastIndexOfDotCss);
   if (lastSlashIndex === -1) {
     return { file: path.slice(0, lastIndexOfDotCss) };
   }
