@@ -6,6 +6,9 @@ export const longPath =
 export const emojiPath =
   "node_modules/my_package/dist/👨‍👩‍👦Test🎉Dir👨‍🚀/Test🎉File👨‍🚀.css.ts";
 
+export const worstCase =
+  "b/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.css.mjs";
+
 export const testCases = [
   {
     name: "shortPath",
@@ -21,5 +24,13 @@ export const testCases = [
     name: "emojiPath",
     input: emojiPath,
     expected: { dir: "👨‍👩‍👦Test🎉Dir👨‍🚀", file: "Test🎉File👨‍🚀" },
+  },
+  {
+    name: "worstCase",
+    input: worstCase,
+    expected: {
+      dir: "b",
+      file: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    },
   },
 ];
