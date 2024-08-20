@@ -16,13 +16,6 @@ const getLastSlashBeforeIndex = (path, index) => {
   return -1;
 };
 
-/**
- * Assumptions:
- * - The path is always normalized to use posix file separators (see `addFileScope`)
- * - The path is always relative to the project root, i.e. there's no leading slash (see `addFileScope`)
- * - There's no need to validate the file extension as we know that we only run this function if the
- *   path is already a VE file
- * */
 export const customSplit4 = (path) => {
   let file;
   let dir;
