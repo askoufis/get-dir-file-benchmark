@@ -23,24 +23,26 @@ export const customSplit2 = (path) => {
       continue;
     }
 
-    // Check for surrogate pairs
-    if (codeUnit >= 0xd800 && codeUnit <= 0xdbff) {
-      // High surrogate
+    let char = path.charAt(i);
+
+    // Check if codeUnit is a low surrogate
+    if (codeUnit >= 0xdc00 && codeUnit <= 0xdfff) {
+      // Ensure there's a previous character
       if (i > 0) {
-        let lowSurrogate = path.charCodeAt(i - 1);
-        if (lowSurrogate >= 0xdc00 && lowSurrogate <= 0xdfff) {
-          // It's a surrogate pair
-          reversed = path.fromCharCode(lowSurrogate, codeUnit) + reversed;
-          i -= 2; // Skip the low surrogate as well
-          continue;
+        let maybeHighSurrogate = path.charCodeAt(i - 1);
+        // Check if the previous code unit is a high surrogate
+        if (maybeHighSurrogate >= 0xd800 && maybeHighSurrogate <= 0xdbff) {
+          // Move to the high surrogate
+          char = String.fromCharCode(maybeHighSurrogate, codeUnit);
+          i--;
         }
       }
     }
 
     if (firstSlashFound) {
-      dir = path.charAt(i) + dir;
+      dir = char + dir;
     } else {
-      file = path.charAt(i) + file;
+      file = char + file;
     }
 
     i--;
