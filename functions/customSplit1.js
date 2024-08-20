@@ -1,7 +1,5 @@
-const onFilePathSeparator = /[\/\\]/;
-
 export const customSplit1 = (path) => {
-  const s = path.split(onFilePathSeparator);
+  const s = path.split("/");
   let dir = "";
 
   if (s.length > 1) {

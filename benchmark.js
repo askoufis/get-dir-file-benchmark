@@ -4,6 +4,7 @@ import { nonGreedyRegex } from "./functions/nonGreedyRegex.js";
 import { customSplit1 } from "./functions/customSplit1.js";
 import { customSplit2 } from "./functions/customSplit2.js";
 import { customSplit3 } from "./functions/customSplit3.js";
+import { customSplit4 } from "./functions/customSplit4.js";
 
 import { testCases } from "./test-cases.js";
 
@@ -15,6 +16,7 @@ const functions = [
   customSplit1,
   customSplit2,
   customSplit3,
+  customSplit4,
 ];
 
 for (const fn of functions) {

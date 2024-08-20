@@ -1,5 +1,4 @@
-const forwardSlash = 47;
-const backSlash = 92;
+const forwardSlash = "/".charCodeAt(0);
 
 export const customSplit2 = (path) => {
   let file = "";
@@ -12,7 +11,7 @@ export const customSplit2 = (path) => {
   while (i >= 0) {
     let codeUnit = path.charCodeAt(i);
 
-    if (codeUnit === forwardSlash || codeUnit === backSlash) {
+    if (codeUnit === forwardSlash) {
       if (firstSlashFound) {
         // We've found the second slash, so we have all the information we need
         break;
