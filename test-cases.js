@@ -9,7 +9,9 @@ export const emojiPath =
 export const loneSurrogates =
   "node_modules/my_package/dist/Test\uD801Dir/Test\uDC01File.css.ts";
 
-export const worstCase =
+export const shortWorstCase = "b/aaaaaaaaaaaa.css.mjs";
+
+export const longWorstCase =
   "b/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.css.mjs";
 
 export const testCases = [
@@ -34,8 +36,16 @@ export const testCases = [
     expected: { dir: "Test\uD801Dir", file: "Test\uDC01File" },
   },
   {
-    name: "worstCase",
-    input: worstCase,
+    name: "shortWorstCase",
+    input: shortWorstCase,
+    expected: {
+      dir: "b",
+      file: "aaaaaaaaaaaa",
+    },
+  },
+  {
+    name: "longWorstCase",
+    input: longWorstCase,
     expected: {
       dir: "b",
       file: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
