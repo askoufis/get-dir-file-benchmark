@@ -18,7 +18,8 @@ Run tests:
 pnpm run test
 ```
 
-> [!NOTE]: `customSplit4` doesn't have tests in this repo because it handles some edge cases the other functions do not. It is tested in Vanilla Extract.
+> [!NOTE]: `customSplit4` doesn't have tests in this repo because it handles some edge cases the other functions do not.
+> It is tested in Vanilla Extract's test suite instead.
 
 ## Results
 
@@ -29,46 +30,46 @@ Each benchmark was given 200ms to run.
 ┌─────────────────────────────────┬──────────────┬────────────────────┬──────────┬─────────┐
 │ Task Name                       │ ops/sec      │ Average Time (ns)  │ Margin   │ Samples │
 ├─────────────────────────────────┼──────────────┼────────────────────┼──────────┼─────────┤
-│ 'originalRegex shortPath'       │ '222,889'    │ 4486.530956974614  │ '±0.22%' │ 44578   │
-│ 'originalRegex longPath'        │ '963'        │ 1037835.5181347037 │ '±0.44%' │ 193     │
-│ 'originalRegex emojiPath'       │ '211,382'    │ 4730.753459324889  │ '±0.22%' │ 42277   │
-│ 'originalRegex loneSurrogates'  │ '221,072'    │ 4523.400361867694  │ '±0.34%' │ 44215   │
-│ 'originalRegex shortWorstCase'  │ '8,359,471'  │ 119.624780862668   │ '±1.29%' │ 1671895 │
-│ 'originalRegex longWorstCase'   │ '4,445,834'  │ 224.9296273933304  │ '±0.96%' │ 889167  │
+│ 'originalRegex shortPath'       │ '223,780'    │ 4468.6670911819665 │ '±0.21%' │ 44757   │
+│ 'originalRegex longPath'        │ '959'        │ 1041961.322916663  │ '±0.45%' │ 192     │
+│ 'originalRegex emojiPath'       │ '211,591'    │ 4726.079160662154  │ '±0.97%' │ 42319   │
+│ 'originalRegex loneSurrogates'  │ '223,121'    │ 4481.863036417766  │ '±0.22%' │ 44625   │
+│ 'originalRegex shortWorstCase'  │ '8,753,737'  │ 114.23691245116692 │ '±1.10%' │ 1750748 │
+│ 'originalRegex longWorstCase'   │ '4,418,431'  │ 226.32465685606218 │ '±0.93%' │ 883961  │
 ├─────────────────────────────────┼──────────────┼────────────────────┼──────────┼─────────┤
-│ 'nonGreedyRegex shortPath'      │ '494,066'    │ 2024.0197745234987 │ '±0.20%' │ 98814   │
-│ 'nonGreedyRegex longPath'       │ '3,872'      │ 258217.93935483816 │ '±0.32%' │ 775     │
-│ 'nonGreedyRegex emojiPath'      │ '432,691'    │ 2311.112908630498  │ '±0.50%' │ 86539   │
-│ 'nonGreedyRegex loneSurrogates' │ '478,781'    │ 2088.6366740825306 │ '±1.64%' │ 95757   │
-│ 'nonGreedyRegex shortWorstCase' │ '8,677,604'  │ 115.23918235502758 │ '±1.40%' │ 1735521 │
-│ 'nonGreedyRegex longWorstCase'  │ '4,014,765'  │ 249.0805467758173  │ '±1.32%' │ 802962  │
+│ 'nonGreedyRegex shortPath'      │ '497,219'    │ 2011.1833494241948 │ '±0.20%' │ 99444   │
+│ 'nonGreedyRegex longPath'       │ '3,857'      │ 259202.8575129615  │ '±0.34%' │ 772     │
+│ 'nonGreedyRegex emojiPath'      │ '434,532'    │ 2301.322862369584  │ '±0.31%' │ 86907   │
+│ 'nonGreedyRegex loneSurrogates' │ '483,732'    │ 2067.2568348380823 │ '±0.41%' │ 96747   │
+│ 'nonGreedyRegex shortWorstCase' │ '9,267,102'  │ 107.90859159170247 │ '±1.26%' │ 1853440 │
+│ 'nonGreedyRegex longWorstCase'  │ '4,173,960'  │ 239.58063735572227 │ '±1.03%' │ 834793  │
 ├─────────────────────────────────┼──────────────┼────────────────────┼──────────┼─────────┤
-│ 'customSplit1 shortPath'        │ '7,892,657'  │ 126.70003648985909 │ '±0.21%' │ 1578532 │
-│ 'customSplit1 longPath'         │ '7,911,972'  │ 126.3907248183099  │ '±0.19%' │ 1582395 │
-│ 'customSplit1 emojiPath'        │ '7,621,177'  │ 131.2133227233814  │ '±1.49%' │ 1524268 │
-│ 'customSplit1 loneSurrogates'   │ '7,932,487'  │ 126.06385321661992 │ '±0.24%' │ 1586498 │
-│ 'customSplit1 shortWorstCase'   │ '7,272,122'  │ 137.5114426667784  │ '±1.92%' │ 1454425 │
-│ 'customSplit1 longWorstCase'    │ '7,402,381'  │ 135.0916503309908  │ '±2.22%' │ 1482406 │
+│ 'customSplit1 shortPath'        │ '8,285,540'  │ 120.6921892286453  │ '±0.21%' │ 1657109 │
+│ 'customSplit1 longPath'         │ '8,273,807'  │ 120.86334519788561 │ '±0.21%' │ 1654790 │
+│ 'customSplit1 emojiPath'        │ '7,734,871'  │ 129.2846270951292  │ '±2.24%' │ 1546975 │
+│ 'customSplit1 loneSurrogates'   │ '8,144,681'  │ 122.77951080977948 │ '±0.21%' │ 1628937 │
+│ 'customSplit1 shortWorstCase'   │ '7,610,708'  │ 131.393819367668   │ '±1.65%' │ 1522142 │
+│ 'customSplit1 longWorstCase'    │ '7,776,682'  │ 128.5895429738938  │ '±1.94%' │ 1555337 │
 ├─────────────────────────────────┼──────────────┼────────────────────┼──────────┼─────────┤
-│ 'customSplit2 shortPath'        │ '5,528,542'  │ 180.879507175895   │ '±1.11%' │ 1105709 │
-│ 'customSplit2 longPath'         │ '5,507,881'  │ 181.55800366201368 │ '±0.99%' │ 1101577 │
-│ 'customSplit2 emojiPath'        │ '1,824,657'  │ 548.0480281258673  │ '±0.20%' │ 364932  │
-│ 'customSplit2 loneSurrogates'   │ '2,520,876'  │ 396.6874008280863  │ '±0.32%' │ 504176  │
-│ 'customSplit2 shortWorstCase'   │ '6,335,163'  │ 157.8491294221514  │ '±0.32%' │ 1267033 │
-│ 'customSplit2 longWorstCase'    │ '749,018'    │ 1335.080064618619  │ '±1.98%' │ 149804  │
+│ 'customSplit2 shortPath'        │ '5,890,930'  │ 169.75246968488892 │ '±1.11%' │ 1178187 │
+│ 'customSplit2 longPath'         │ '5,907,656'  │ 169.27186144749894 │ '±1.24%' │ 1181532 │
+│ 'customSplit2 emojiPath'        │ '1,869,698'  │ 534.845673102299   │ '±0.38%' │ 373940  │
+│ 'customSplit2 loneSurrogates'   │ '2,609,727'  │ 383.1818310709946  │ '±0.40%' │ 521946  │
+│ 'customSplit2 shortWorstCase'   │ '6,867,613'  │ 145.6109843084241  │ '±0.22%' │ 1373523 │
+│ 'customSplit2 longWorstCase'    │ '744,369'    │ 1343.4192068473349 │ '±2.32%' │ 148874  │
 ├─────────────────────────────────┼──────────────┼────────────────────┼──────────┼─────────┤
-│ 'customSplit3 shortPath'        │ '9,417,140'  │ 106.18934294848135 │ '±0.19%' │ 1883429 │
-│ 'customSplit3 longPath'         │ '9,377,497'  │ 106.6382575319415  │ '±0.20%' │ 1875500 │
-│ 'customSplit3 emojiPath'        │ '6,874,001'  │ 145.4756833904221  │ '±1.91%' │ 1374801 │
-│ 'customSplit3 loneSurrogates'   │ '8,885,938'  │ 112.53735282980278 │ '±0.33%' │ 1777188 │
-│ 'customSplit3 shortWorstCase'   │ '9,393,014'  │ 106.46209550316028 │ '±1.28%' │ 1878603 │
-│ 'customSplit3 longWorstCase'    │ '2,020,028'  │ 495.0426404553966  │ '±0.73%' │ 404006  │
+│ 'customSplit3 shortPath'        │ '11,464,087' │ 87.22892309901842  │ '±0.19%' │ 2292818 │
+│ 'customSplit3 longPath'         │ '11,343,824' │ 88.15369330796598  │ '±0.19%' │ 2268765 │
+│ 'customSplit3 emojiPath'        │ '7,859,318'  │ 127.23748874005459 │ '±1.87%' │ 1571864 │
+│ 'customSplit3 loneSurrogates'   │ '10,429,084' │ 95.88569754599575  │ '±0.30%' │ 2085817 │
+│ 'customSplit3 shortWorstCase'   │ '11,254,097' │ 88.85652873166032  │ '±1.52%' │ 2250820 │
+│ 'customSplit3 longWorstCase'    │ '2,389,244'  │ 418.54235543388273 │ '±1.14%' │ 477849  │
 ├─────────────────────────────────┼──────────────┼────────────────────┼──────────┼─────────┤
-│ 'customSplit4 shortPath'        │ '10,111,933' │ 98.8930506373828   │ '±0.21%' │ 2022387 │
-│ 'customSplit4 longPath'         │ '10,148,667' │ 98.53510410662426  │ '±0.20%' │ 2029734 │
-│ 'customSplit4 emojiPath'        │ '7,489,692'  │ 133.51683680112546 │ '±1.26%' │ 1497939 │
-│ 'customSplit4 loneSurrogates'   │ '9,607,004'  │ 104.09072333608378 │ '±0.20%' │ 1921402 │
-│ 'customSplit4 shortWorstCase'   │ '9,885,098'  │ 101.16237165172805 │ '±1.96%' │ 1977020 │
-│ 'customSplit4 longWorstCase'    │ '2,358,641'  │ 423.9729018145984  │ '±0.93%' │ 471729  │
+│ 'customSplit4 shortPath'        │ '12,535,244' │ 79.77506622443484  │ '±0.20%' │ 2507049 │
+│ 'customSplit4 longPath'         │ '12,446,844' │ 80.34164547652637  │ '±0.22%' │ 2489370 │
+│ 'customSplit4 emojiPath'        │ '8,393,999'  │ 119.13272158743979 │ '±3.39%' │ 1678800 │
+│ 'customSplit4 loneSurrogates'   │ '11,860,581' │ 84.31289645351727  │ '±0.20%' │ 2372117 │
+│ 'customSplit4 shortWorstCase'   │ '11,910,105' │ 83.96231520903211  │ '±2.29%' │ 2382022 │
+│ 'customSplit4 longWorstCase'    │ '2,840,267'  │ 352.0794748380534  │ '±1.55%' │ 568054  │
 └─────────────────────────────────┴──────────────┴────────────────────┴──────────┴─────────┘
 ```
