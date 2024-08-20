@@ -18,7 +18,8 @@ Run tests:
 pnpm run test
 ```
 
-> [!NOTE]: `customSplit4` doesn't have tests in this repo because it handles some edge cases the other functions do not.
+> [!NOTE]
+> The `customSplit4` function doesn't have tests in this repo because it handles some edge cases the other functions do not.
 > It is tested in Vanilla Extract's test suite instead.
 
 ## Results
