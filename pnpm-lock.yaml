@@ -8,15 +8,39 @@ importers:
 
   .:
     devDependencies:
+      lru-cache:
+        specifier: ^11.0.0
+        version: 11.0.0
+      mnemonist:
+        specifier: ^0.39.8
+        version: 0.39.8
       tinybench:
         specifier: ^2.9.0
         version: 2.9.0
 
 packages:
 
+  lru-cache@11.0.0:
+    resolution: {integrity: sha512-Qv32eSV1RSCfhY3fpPE2GNZ8jgM9X7rdAfemLWqTUxwiyIC4jJ6Sy0fZ8H+oLWevO6i4/bizg7c8d8i6bxrzbA==}
+    engines: {node: 20 || >=22}
+
+  mnemonist@0.39.8:
+    resolution: {integrity: sha512-vyWo2K3fjrUw8YeeZ1zF0fy6Mu59RHokURlld8ymdUPjMlD9EC9ov1/YPqTgqRvUN9nTr3Gqfz29LYAmu0PHPQ==}
+
+  obliterator@2.0.4:
+    resolution: {integrity: sha512-lgHwxlxV1qIg1Eap7LgIeoBWIMFibOjbrYPIPJZcI1mmGAI2m3lNYpK12Y+GBdPQ0U1hRwSord7GIaawz962qQ==}
+
   tinybench@2.9.0:
     resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
 
 snapshots:
+
+  lru-cache@11.0.0: {}
+
+  mnemonist@0.39.8:
+    dependencies:
+      obliterator: 2.0.4
+
+  obliterator@2.0.4: {}
 
   tinybench@2.9.0: {}
